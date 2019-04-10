@@ -1,4 +1,12 @@
-const toggleMenu = () => menu.classList.toggle('menu--open');
+const toggleMenu = () => {
+  menu.style.display = 'block';
+  menu.classList.toggle('menu--open')
+  if (menu.classList.contains('menu-open')) {
+    setTimeout(() => {
+      menu.style.display = 'none'
+    }, 330);
+  }
+};
 
 // Start Here: Create a reference to the ".menu" class
 const menu = document.querySelector('.menu');
