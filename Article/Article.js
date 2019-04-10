@@ -26,10 +26,8 @@ class Article {
 
   toggleArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    const state = this.expandButton.textContent;
-    // NOTE: Bad nomenclature, 'collapsed' state === 'expand', may want to update this functionality for readability
-    if (state === 'expand') {
-      console.log(this.domElement);
+    const state = this.expandButton.textContent === 'expand' ? 'collapsed' : 'expanded';
+    if (state === 'collapsed') {
       this.expandButton.textContent = 'collapse';
       this.domElement.style.height = `${this.height}px`;
     } else {
