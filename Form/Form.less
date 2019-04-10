@@ -1,0 +1,49 @@
+.form-container {
+  display: none;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: pink;
+  z-index: 2;
+
+  .form {
+    width: 50vw;
+    height: auto;
+    background: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    input, textarea {
+      height: 10%;
+      min-height: 30px;
+      width: 90%;
+      background: white;
+      margin: 20px;
+      font-size: 22px;
+      padding: 10px;
+      border: 1px solid gray;
+      border-radius: 3px;
+    }
+
+    .content {
+      height: 30%;
+      min-height: 200px;
+    }
+
+    .submit {
+      cursor: pointer;
+      
+      &:hover {
+        background: darken(white, 5%);
+      }
+    }
+  }
+}

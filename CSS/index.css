@@ -124,6 +124,50 @@
 .article-open {
   height: auto;
 }
+.form-container {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: pink;
+  z-index: 2;
+}
+.form-container .form {
+  width: 50vw;
+  height: auto;
+  background: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.form-container .form input,
+.form-container .form textarea {
+  height: 10%;
+  min-height: 30px;
+  width: 90%;
+  background: white;
+  margin: 20px;
+  font-size: 22px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+.form-container .form .content {
+  height: 30%;
+  min-height: 200px;
+}
+.form-container .form .submit {
+  cursor: pointer;
+}
+.form-container .form .submit:hover {
+  background: #f2f2f2;
+}
 html,
 body {
   margin: 0;
