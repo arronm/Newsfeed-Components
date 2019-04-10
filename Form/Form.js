@@ -1,6 +1,10 @@
 const toggleForm = () => {
   const modal = document.querySelector('.form-container');
   modal.classList.toggle('form--open');
+  
+  // blur other elements
+  document.querySelector('.header').classList.toggle('blur');
+  document.querySelector('.articles').classList.toggle('blur');
 };
 
 const submitForm = () => {
