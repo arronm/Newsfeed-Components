@@ -111,7 +111,7 @@ class ArticleDatabase {
       "id": id,
       "title": article.title,
       "date": article.date,
-      "content": article.message,
+      "content": article.content,
     };
     localStorage.setItem('articleDB', JSON.stringify(this.database));
     return this.database;

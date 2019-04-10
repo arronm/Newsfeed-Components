@@ -8,18 +8,18 @@ const toggleForm = () => {
 };
 
 const submitForm = () => {
-  const post = {};
-  post.title = document.querySelector('.form .title').value;
-  post.date = document.querySelector('.form .date').value;
-  post.content = document.querySelector('.form .content').value;
-  articles.save(post);
-  post.parent = '.articles';
-  ArticleFactory(post);
+  const article = {};
+  article.title = document.querySelector('.form .title').value;
+  article.date = document.querySelector('.form .date').value;
+  article.content = document.querySelector('.form .content').value;
+  articles.save(article);
+  article.parent = '.articles';
+  ArticleFactory(article);
   toggleForm();
 };
 
 // Function to show our post form
-document.getElementById('create-post').addEventListener('click', toggleForm);
+document.getElementById('create-article').addEventListener('click', toggleForm);
 
 // Escape listener to close form modal
 document.addEventListener('keydown', (event) => {
