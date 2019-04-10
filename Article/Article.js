@@ -22,7 +22,6 @@ class Article {
     // Set up height values for each article
     // DEBUG: Hard coded 22, because I'm too lazy to math out the padding/margin to get scalable values. Future me will be annoyed but at least I left a debug comment
     this.height = this.getArticleHeight.call(this) - 22;
-    console.log(this.height);
   }
 
   getArticleHeight() {
@@ -72,7 +71,6 @@ articles.forEach((article) => new Article(article));
  * @returns {Article}
  */
 const ArticleFactory = (props) => {
-  // create dom structure .article>h2{title}+p.date{date}+content+span.expandButton+span.closeButton
   const article = document.createElement('div');
   article.classList.add('article');
 
