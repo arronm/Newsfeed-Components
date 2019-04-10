@@ -52,13 +52,6 @@ class Article {
   }
 }
 
-// - Select all classes named ".article" and assign that value to the articles variable.
-const articles = document.querySelectorAll('.article');
-
-// - With your selection in place, now chain .forEach() on to the articles variable to iterate over the articles NodeList and create a new instance of Article by passing in each article as a parameter to the Article class.
-articles.forEach((article) => new Article(article));
-
-
 // Create an ArticleFactory
 /**
  * Creates a new Article object.
@@ -106,3 +99,12 @@ const ArticleFactory = (props) => {
   document.querySelector(props.parent).appendChild(article);
   new Article(article);
 }
+
+const articles = new ArticleDatabase();
+
+Object.values(articles.database).forEach((article) => {
+  ArticleFactory({
+    ...article,
+    parent: '.articles'
+  });
+});
