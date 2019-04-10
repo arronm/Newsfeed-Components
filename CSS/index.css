@@ -77,7 +77,7 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
-  transition: height 0.33s ease-in-out;
+  transition: height 0.33s ease-in-out, padding 0.33s ease-in-out;
 }
 .article h2 {
   font-size: 28px;
@@ -102,6 +102,13 @@
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
+}
+.closeButton {
+  position: absolute;
+  top: 27px;
+  right: 25px;
+  font-size: 12px;
+  cursor: pointer;
 }
 .article-open {
   height: auto;

@@ -5,12 +5,15 @@ class Article {
     
     // create a reference to the ".expandButton" class.
     this.expandButton = domElement.querySelector('.expandButton');
+    this.closeButton = domElement.querySelector('.closeButton');
 
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerText = 'expand';
 
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', this.toggleArticle.bind(this));
+
+    this.closeButton.addEventListener('click', this.closeArticle.bind(this));
 
     // Set up height values for each article
     // DEBUG: Hard coded 22, because I'm too lazy to math out the padding/margin to get scalable values. Future me will be annoyed but at least I left a debug comment
@@ -34,6 +37,14 @@ class Article {
       this.expandButton.textContent = 'expand';
       this.domElement.removeAttribute('style');
     }
+  }
+
+  closeArticle() {
+    this.domElement.style.height = '0px';
+    this.domElement.style.padding = '0px';
+    setTimeout(() => {
+      this.domElement.remove();
+    }, 330);
   }
 }
 
