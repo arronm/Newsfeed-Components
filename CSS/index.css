@@ -30,6 +30,7 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  transition: filter 0.33s ease-in-out;
 }
 .header h1 {
   margin: 0;
@@ -54,6 +55,7 @@
   z-index: 2;
   /* This set the layer level of the element, it has precedent over initial level of 1*/
   transition: left 0.33s ease-in-out;
+  transition: filter 0.33s ease-in-out;
 }
 .menu .closeBox {
   display: none;
@@ -77,6 +79,7 @@
 }
 .articles {
   margin-top: 95px;
+  transition: filter 0.33s ease-in-out;
 }
 .article {
   margin: 20px 10%;
@@ -125,8 +128,8 @@
   height: auto;
 }
 .form-container {
-  display: none;
   box-sizing: border-box;
+  display: flex;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -135,6 +138,8 @@
   align-items: center;
   z-index: 2;
   background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.33s ease-in-out;
 }
 .form-container .form {
   width: 50vw;
@@ -171,7 +176,11 @@
   background: #f2f2f2;
 }
 .form-container.form--open {
-  display: flex;
+  transition: opacity 0.33s ease-in-out;
+  opacity: 1;
+}
+.form-container.form--hidden {
+  display: none;
 }
 #create-article {
   width: 50px;
@@ -186,6 +195,8 @@
   bottom: 50px;
   right: 50px;
   cursor: pointer;
+  z-index: 3;
+  transition: filter 0.33s ease-in-out;
 }
 .blur {
   filter: blur(2px);

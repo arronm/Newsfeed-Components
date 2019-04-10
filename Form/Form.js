@@ -1,10 +1,24 @@
 const toggleForm = () => {
   const modal = document.querySelector('.form-container');
-  modal.classList.toggle('form--open');
+  
+  if (!modal.classList.contains('form--open')) {
+    // open modal
+    modal.classList.toggle('form--hidden');
+  } else {
+    // close model
+    setTimeout(() => {
+      modal.classList.toggle('form--hidden');
+    }, 330);
+  }
+  setTimeout(() => {
+    modal.classList.toggle('form--open');
+  }, 1);
   
   // blur other elements
   document.querySelector('.header').classList.toggle('blur');
   document.querySelector('.articles').classList.toggle('blur');
+  document.querySelector('.menu').classList.toggle('blur');
+  document.getElementById('create-article').classList.toggle('blur');
 };
 
 const submitForm = () => {

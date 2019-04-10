@@ -1,6 +1,6 @@
 .form-container {
-  display: none;
   box-sizing: border-box;
+  display: flex;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -9,6 +9,8 @@
   align-items: center;
   z-index: 2;
   background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.33s ease-in-out;
 
   .form {
     width: 50vw;
@@ -49,7 +51,12 @@
   }
 
   &.form--open {
-    display: flex;
+    transition: opacity 0.33s ease-in-out;
+    opacity: 1;
+  }
+
+  &.form--hidden {
+    display: none;
   }
 }
 
@@ -66,6 +73,8 @@
   bottom: 50px;
   right: 50px;
   cursor: pointer;
+  z-index: 3;
+  transition: filter 0.33s ease-in-out;
 }
 
 .blur {
