@@ -49,6 +49,7 @@ class Article {
     setTimeout(() => {
       this.domElement.remove();
     }, 330);
+    articles.remove(this.domElement.id);
   }
 }
 
@@ -61,11 +62,13 @@ class Article {
  * @property {string} props.title - Title for the Article.
  * @property {string} props.date - Date the article was published.
  * @property {string} props.content - Rich content for the article.
+ * @property {string} props.id - Unique ID for the article.
  * @returns {Article}
  */
 const ArticleFactory = (props) => {
   const article = document.createElement('div');
   article.classList.add('article');
+  article.id = props.id;
 
   // create title node
   const title = document.createElement('h2');

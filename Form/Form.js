@@ -12,6 +12,7 @@ const submitForm = () => {
   post.title = document.querySelector('.form .title').value;
   post.date = document.querySelector('.form .date').value;
   post.content = document.querySelector('.form .content').value;
+  articles.save(post);
   post.parent = '.articles';
   ArticleFactory(post);
   toggleForm();
@@ -45,7 +46,7 @@ submit.addEventListener('click', () => {
 // Ctrl + Enter listener to submit form
 document.addEventListener('keydown', (event) => {
   // If control + enter is pressed and our modal is open
-  if ((event.keyCode = 13 && event.ctrlKey) && document.querySelector('.form-container').classList.contains('form--open')) {
+  if ((event.keyCode === 13 && event.ctrlKey) && document.querySelector('.form-container').classList.contains('form--open')) {
     submitForm();
   }
 });
