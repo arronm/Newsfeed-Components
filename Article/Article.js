@@ -103,6 +103,7 @@ const ArticleFactory = (props) => {
   new Article(article);
 }
 
+// Set up our article database and populate articles
 const articles = new ArticleDatabase();
 
 Object.values(articles.database).forEach((article) => {
