@@ -18,10 +18,6 @@ class Article {
     this.expandButton.addEventListener('click', this.toggleArticle.bind(this));
 
     this.closeButton.addEventListener('click', this.closeArticle.bind(this));
-
-    // Set up height values for each article
-    // DEBUG: Hard coded 22, because I'm too lazy to math out the padding/margin to get scalable values. Future me will be annoyed but at least I left a debug comment
-    this.height = this.getArticleHeight.call(this) - 22;
   }
 
   getArticleHeight() {
@@ -34,9 +30,13 @@ class Article {
   toggleArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     const state = this.expandButton.textContent === 'expand' ? 'collapsed' : 'expanded';
+
+    // Set up height values for each article
+    // DEBUG: Hard coded 22, because I'm too lazy to math out the padding/margin to get scalable values. Future me will be annoyed but at least I left a debug comment
+    const height = this.getArticleHeight.call(this) - 22;
     if (state === 'collapsed') {
       this.expandButton.textContent = 'collapse';
-      this.domElement.style.height = `${this.height}px`;
+      this.domElement.style.height = `${height}px`;
     } else {
       this.expandButton.textContent = 'expand';
       this.domElement.removeAttribute('style');
