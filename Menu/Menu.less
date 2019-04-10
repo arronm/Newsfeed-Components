@@ -16,15 +16,6 @@
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precedent over initial level of 1*/
   transition: left 0.33s ease-in-out;
-
-  .closeBox {
-    display: none;
-    position: absolute;
-    width: 100vw;
-    top: 0;
-    bottom: 0;
-    right: -100vw;
-  }
 }
 
 .menu ul li{
@@ -36,8 +27,4 @@
 
 .menu--open {
   left: 0px;
-
-  .closeBox {
-    display: block;
-  }
 }
