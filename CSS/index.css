@@ -54,8 +54,7 @@
   border-bottom: none;
   z-index: 2;
   /* This set the layer level of the element, it has precedent over initial level of 1*/
-  transition: left 0.33s ease-in-out;
-  transition: filter 0.33s ease-in-out;
+  transition: left 0.33s ease-in-out, filter 0.33s ease-in-out;
 }
 .menu .closeBox {
   display: none;
