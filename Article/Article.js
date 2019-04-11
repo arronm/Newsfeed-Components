@@ -21,6 +21,7 @@ class Article {
   }
 
   getArticleHeight() {
+    console.log(this);
     this.domElement.classList.toggle('article-open');
     const elementHeight = this.domElement.offsetHeight;
     this.domElement.classList.toggle('article-open');
@@ -34,13 +35,17 @@ class Article {
     // Set up height values for each article
     // DEBUG: Hard coded 22, because I'm too lazy to math out the padding/margin to get scalable values. Future me will be annoyed but at least I left a debug comment
     const height = this.getArticleHeight.call(this) - 22;
-    if (state === 'collapsed') {
-      this.expandButton.textContent = 'collapse';
-      this.domElement.style.height = `${height}px`;
-    } else {
-      this.expandButton.textContent = 'expand';
-      this.domElement.removeAttribute('style');
-    }
+
+    // DEBUG: Setting a timeout to delay the state change until a height has been determined. Probably a better way to do this with a promise.
+    setTimeout(() => {
+      if (state === 'collapsed') {
+        this.expandButton.textContent = 'collapse';
+        this.domElement.style.height = `${height}px`;
+      } else {
+        this.expandButton.textContent = 'expand';
+        this.domElement.removeAttribute('style');
+      }
+    }, 1);
   }
 
   closeArticle() {
