@@ -1,6 +1,8 @@
 .articles {
   margin-top: 95px;
+  transition: filter 0.33s ease-in-out;
 }
+
 .article {
   margin: 20px 10%;
   padding: 0 20px 25px;
@@ -11,6 +13,8 @@
   height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  transition: height 0.33s ease-in-out,
+              padding 0.33s ease-in-out;
 
   h2 {
     font-size: 28px;
@@ -41,10 +45,14 @@
   }
 }
 
-.article-open {
-  height: 400px;
+.closeButton {
+  position: absolute;
+  top: 27px;
+  right: 25px;
+  font-size: 12px;
+  cursor: pointer;
 }
 
-
-
-
+.article-open {
+  height:auto;
+}

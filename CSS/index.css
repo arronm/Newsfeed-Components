@@ -3,19 +3,19 @@
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 400;
-  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v19/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
 /* Below this line is where you will start your work */
 /* It is important to note, you will not be writing any CSS in this file*/
@@ -30,10 +30,175 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  transition: filter 0.33s ease-in-out;
 }
 .header h1 {
   margin: 0;
   font-size: 48px;
+}
+.menu-button {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}
+.menu {
+  position: fixed;
+  top: 75px;
+  left: -350px;
+  width: 350px;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: #81C784;
+  border: 1px solid #004D40;
+  border-left: none;
+  border-bottom: none;
+  z-index: 2;
+  /* This set the layer level of the element, it has precedent over initial level of 1*/
+  transition: left 0.33s ease-in-out, filter 0.33s ease-in-out;
+}
+.menu .closeBox {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  right: -100vw;
+}
+.menu ul li {
+  list-style-type: none;
+  font-size: 32px;
+  padding: 30px 0;
+  text-align: center;
+}
+.menu--open {
+  left: 0px;
+}
+.menu--open .closeBox {
+  display: block;
+}
+.articles {
+  margin-top: 95px;
+  transition: filter 0.33s ease-in-out;
+}
+.article {
+  margin: 20px 10%;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px lightgrey;
+  transition: height 0.33s ease-in-out, padding 0.33s ease-in-out;
+}
+.article h2 {
+  font-size: 28px;
+  padding: 0;
+  margin: 15px 0 0;
+}
+.article .date {
+  margin: 0;
+  font-size: 14px;
+}
+.article .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.article .expandButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
+}
+.closeButton {
+  position: absolute;
+  top: 27px;
+  right: 25px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.article-open {
+  height: auto;
+}
+.form-container {
+  box-sizing: border-box;
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.33s ease-in-out;
+}
+.form-container .form {
+  width: 50vw;
+  height: auto;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+.form-container .form input,
+.form-container .form textarea {
+  height: 10%;
+  min-height: 30px;
+  width: 90%;
+  background: white;
+  margin: 20px;
+  font-size: 22px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+.form-container .form .content {
+  height: 30%;
+  min-height: 200px;
+}
+.form-container .form .submit {
+  cursor: pointer;
+}
+.form-container .form .submit:hover {
+  background: #f2f2f2;
+}
+.form-container.form--open {
+  transition: opacity 0.33s ease-in-out;
+  opacity: 1;
+}
+.form-container.form--hidden {
+  display: none;
+}
+#create-article {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #388E3C;
+  line-height: 50px;
+  font-size: 38px;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+  z-index: 3;
+  transition: filter 0.33s ease-in-out;
+}
+.blur {
+  filter: blur(2px);
 }
 html,
 body {

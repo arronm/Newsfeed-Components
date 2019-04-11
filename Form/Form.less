@@ -1,0 +1,82 @@
+.form-container {
+  box-sizing: border-box;
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.33s ease-in-out;
+
+  .form {
+    width: 50vw;
+    height: auto;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px lightgrey;
+
+    input, textarea {
+      height: 10%;
+      min-height: 30px;
+      width: 90%;
+      background: white;
+      margin: 20px;
+      font-size: 22px;
+      padding: 10px;
+      border: 1px solid gray;
+      border-radius: 3px;
+    }
+
+    .content {
+      height: 30%;
+      min-height: 200px;
+    }
+
+    .submit {
+      cursor: pointer;
+      
+      &:hover {
+        background: darken(white, 5%);
+      }
+    }
+  }
+
+  &.form--open {
+    transition: opacity 0.33s ease-in-out;
+    opacity: 1;
+  }
+
+  &.form--hidden {
+    display: none;
+  }
+}
+
+#create-article {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #388E3C;
+  line-height: 50px;
+  font-size: 38px;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+  z-index: 3;
+  transition: filter 0.33s ease-in-out;
+}
+
+.blur {
+  filter: blur(2px);
+}
